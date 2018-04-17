@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-autowire="byName">
+
+    <bean id="writeDataSource" class="com.art.design.common.druid.DruidDataSourceWrapper" init-method="init" destroy-method="close">
+<!-- 		<constructor-arg index="0" value="${mysql.jdbc.desDecrpt}" /> -->
+		<!-- 基本属性 url、user、password -->
+		<property name="driverClassName" value="${mysql.jdbc.driver.class}"/>
+		<property name="url" value="${mysql.jdbc.url}" />
+		<property name="username" value="${mysql.jdbc.username}" />
+		<property name="password" value="${mysql.jdbc.password}" />
+		<!-- 配置初始化大小、最小、最大-->
+		<property name="initialSize" value="${mysql.jdbc.initialPoolSize}" />
+		<property name="minIdle" value="${mysql.jdbc.minPoolSize}" />
+		<property name="maxActive" value="${mysql.jdbc.maxPoolSize}" />
+		<!-- 配置获取连接等待超时的时间 -->
+		<property name="maxWait" value="${mysql.jdbc.maxWait}" />
+		<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+		<property name="timeBetweenEvictionRunsMillis" value="${mysql.jdbc.timeBetweenEvictionRunsMillis}" />
+		<!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+		<property name="minEvictableIdleTimeMillis" value="${mysql.jdbc.maxIdleTime}" />
+		<property name="validationQuery" value="select now()" />
+		<property name="testWhileIdle" value="${mysql.jdbc.testWhileIdle}" />
+		<property name="testOnBorrow" value="${mysql.jdbc.testOnBorrow}" />
+		<property name="testOnReturn" value="${mysql.jdbc.testOnReturn}" />
+		<!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+		<property name="poolPreparedStatements" value="${mysql.jdbc.poolPreparedStatements}" />
+		<property name="filters" value="stat" />
+	</bean>
+
+	<bean id="readDataSource" class="com.art.design.common.druid.DruidDataSourceWrapper" init-method="init" destroy-method="close">
+<!-- 		<constructor-arg index="0" value="${mysql.jdbc.desDecrpt}" /> -->
+		<!-- 基本属性 url、user、password -->
+		<property name="driverClassName" value="${mysql.jdbc.driver.class}"/>
+		<property name="url" value="${readmysql.jdbc.url}" />
+		<property name="username" value="${readmysql.jdbc.username}" />
+		<property name="password" value="${readmysql.jdbc.password}" />
+		<!-- 配置初始化大小、最小、最大-->
+		<property name="initialSize" value="${mysql.jdbc.initialPoolSize}" />
+		<property name="minIdle" value="${mysql.jdbc.minPoolSize}" />
+		<property name="maxActive" value="${mysql.jdbc.maxPoolSize}" />
+		<!-- 配置获取连接等待超时的时间 -->
+		<property name="maxWait" value="${mysql.jdbc.maxWait}" />
+		<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+		<property name="timeBetweenEvictionRunsMillis" value="${mysql.jdbc.timeBetweenEvictionRunsMillis}" />
+		<!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+		<property name="minEvictableIdleTimeMillis" value="${mysql.jdbc.maxIdleTime}" />
+		<property name="validationQuery" value="select now()" />
+		<property name="testWhileIdle" value="${mysql.jdbc.testWhileIdle}" />
+		<property name="testOnBorrow" value="${mysql.jdbc.testOnBorrow}" />
+		<property name="testOnReturn" value="${mysql.jdbc.testOnReturn}" />
+		<!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+		<property name="poolPreparedStatements" value="${mysql.jdbc.poolPreparedStatements}" />
+		<property name="filters" value="stat" />
+	</bean>
+
+</beans>

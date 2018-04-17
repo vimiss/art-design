@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+
+	<mvc:annotation-driven>  
+		<mvc:message-converters register-defaults="true">  
+			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">  
+		         <property name="prefixJson" value="false"/>  
+		         <property name="supportedMediaTypes">  
+		             <list>  
+		               <value>application/json</value>  
+		               <value>text/json</value>  
+		             </list>  
+		          </property>  
+	       	</bean>  
+  		</mvc:message-converters>  
+	</mvc:annotation-driven>
+	<!-- 隐式地向 Spring 容器注册 -->
+	<context:annotation-config />
+	<!-- 开启controller注解支持 -->
+	<context:component-scan base-package="com.art.design.web.*.controller">
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+	<!--配置自动将controller的返回对象转换成json格式 -->
+	<bean
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />
+	<bean
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<bean
+					class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+					<property name="supportedMediaTypes">
+						<list>
+							<value>text/html;charset=UTF-8</value>
+							<value>application/json;charset=UTF-8</value>
+						</list>
+					</property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 静态文件目录 -->
+	<mvc:resources mapping="/img/**" location="WEB-INF/statics/images/" cache-period="31556926" />
+	<mvc:resources mapping="/images/**" location="WEB-INF/statics/images/" cache-period="31556926" />
+	<mvc:resources mapping="/js/**" location="WEB-INF/statics/javascript/" cache-period="31556926" />
+	<mvc:resources mapping="/javascript/**" location="WEB-INF/statics/javascript/" cache-period="31556926" />
+	<mvc:resources mapping="/css/**" location="WEB-INF/statics/style/" cache-period="31556926" />
+	<mvc:resources mapping="/styles/**" location="WEB-INF/statics/styles/" cache-period="31556926" />
+	<mvc:resources mapping="/template/**" location="WEB-INF/statics/template/" cache-period="31556926" />
+	<!-- ace静态文件目录 -->
+	<mvc:resources mapping="/ace/**" location="WEB-INF/statics/ace2/assets/" cache-period="31556926" />
+	<!-- easyui静态文件目录 -->
+	<mvc:resources mapping="/easyui/**" location="WEB-INF/statics/easyui/" cache-period="31556926" />
+	<!-- bootstrap静态文件目录 -->
+	<mvc:resources mapping="/bs/**" location="WEB-INF/statics/bootstrap/" cache-period="31556926" />
+	<!-- bootstrap插件静态文件目录 -->
+	<mvc:resources mapping="/pg/**" location="WEB-INF/statics/javascript/plugins/" cache-period="31556926" />
+	<!-- 静态报表文件目录 -->
+	<mvc:resources mapping="/html/**" location="WEB-INF/statics/html/" cache-period="31556926" />
+	
+	<bean id="exceptionHandler" class="com.art.design.web.common.handler.SystemExceptionHandler"/>
+	
+	<!--设置ftl取java静态方法 -->
+    <bean id="freemarkerStaticModels" 
+        class="com.art.design.web.common.freemarker.FreemarkerStaticModels" factory-method="getInstance">
+    </bean>
+    
+	<!-- 针对freemarker的视图配置 -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+		<property name="cache" value="true" />
+		<property name="prefix" value="" />
+		<property name="suffix" value=".ftl" />
+		<property name="order" value="1"/>
+		<property name="contentType" value="text/html;charset=UTF-8"></property>
+		<property name="requestContextAttribute" value="request" />
+		<property name="exposeSpringMacroHelpers" value="true" />
+		<property name="exposeRequestAttributes" value="true" />
+		<property name="exposeSessionAttributes" value="true" />
+		<property name="allowSessionOverride" value="true"/>
+		<property name="attributesMap" ref="freemarkerStaticModels"/>
+	</bean>
+	
+	<!-- freemaker配置 -->
+<!--    <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">  -->
+    <bean id="freemarkerConfig" class="com.art.design.web.common.freemarker.ShiroTagFreeMarkerConfigurer">     
+        <property name="templateLoaderPath" value="/WEB-INF/views/" />  
+        <property name="freemarkerSettings">  
+            <props>  
+                <prop key="template_update_delay">0</prop>  
+                <prop key="default_encoding">UTF-8</prop>  
+                <prop key="number_format">0.##########</prop>  
+                <prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>  
+                <prop key="classic_compatible">true</prop>  
+                <prop key="template_exception_handler">ignore</prop>  
+            </props>  
+        </property>
+<!--         <property name="freemarkerVariables"> -->
+<!--         	<map> -->
+<!--         		<entry key="options"> -->
+<!--         			<bean class="com.el.common.option.OptionDirective" /> -->
+<!--         		</entry> -->
+<!--         	</map> -->
+<!--         </property> -->
+    </bean>
+
+	<!-- 文件上传相关 -->
+<!-- 	<bean id="multipartResolver" -->
+<!-- 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"> -->
+		<!-- one of the properties available; the maximum file size in bytes -->
+		<!-- 200M -->
+<!-- 		<property name="defaultEncoding" value="utf-8" /> -->
+		<!-- 200*1024*1024 -->
+<!-- 		<property name="maxUploadSize" value="209715200" /> -->
+<!-- 		<property name="resolveLazily" value="true" /> -->
+<!-- 	</bean> -->
+<!-- 	<mvc:interceptors> -->
+<!--         <mvc:interceptor> -->
+<!--             <mvc:mapping path="/**"/> -->
+<!--             <bean class="com.el.platform.token.TokenInterceptor"/> -->
+<!--         </mvc:interceptor> -->
+<!--     </mvc:interceptors> -->
+
+</beans>

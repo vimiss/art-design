@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+.chosen-container-single a.chosen-single{background:none;border-radius: 0;height: 30px;line-height: 30px;/* margin-top: -3px; */ border: 1px solid #ddd;box-shadow: none;}
+.chosen-container-single .chosen-search::after{content:""}
+h1,h2,h3,h4,h5,h6{font-family: "Microsoft YaHei";}
+.chosen-container.chosen-container-single{ min-width: 120px;}
+.sosTiotit{ font-size: 14px; color: #fff; margin-top: 42px; margin-right: 30px; font-family: "Microsoft YaHei";}
+.fanhuiIndex{ margin-right: 10px; margin-top: 4px;}
+.margin_botS{ margin-bottom: 20px;}
+.InputTexy1{ height: 32px;}
+.AceSelectSos{ width: 80px  !important;}
+.limited{ width: 466px; height: 100px;}
+.ResourceDiv{ width: 20%}
+.ResouConDiv{ font-size: 23px;}
+.AceListLeft{top: 23%;}
+.taskBtu{margin-top: 25px;}
+#exitModal .chosen-container.chosen-container-single{ width: 120px !important;}
+.labelSOC{ margin-right: 10px;}
+.bigger-140.cocoEaf{font-size:110% !important}
+.showChildNOSOC{ margin-right: 10px; min-width: 90px;}
+.WdateInputSOC{ width: 130px;}
+.navbar-header.pull-left>img{ float: left;}
+.PageTop{ padding-left: 0;}
+.taskBtu  {
+    font-size: 18px;
+    color: #000;
+    text-decoration: none;
+    margin-right: 20px;
+}
+.label{ height: auto}
+.shaiSoSom{ padding-bottom: 15px; margin-bottom: 15px; border-bottom: 1px solid #D3D3D3}
+.shitiComSoS{ border-bottom: 1px dashed #D3D3D3; padding-bottom: 15px; margin-bottom: 10px;}
+.rundsosom{ background: #fff; display: block; height: 136px; padding-top: 40px; border-radius: 20px; border: 1px solid #dcdbe9; margin-bottom: 40px; width: 100%; }
+.rundsosom dl{ padding-left: 20%;}
+.rundsosom dd{ width:60%; margin-left: 18px; display: inline-block;}
+.rundsosom h4{ font-weight: bold;}
+a{ display: inline-block}
+td{vertical-align: middle !important;}
+.InputStrong{ display: inline-block; width: 126px; padding-left: 10px;}
+.InputTexy2{ width: 420px;}
+.qunxSoS{  margin: 0 auto; text-align: left;}
+.logon_bg{ position: absolute; width: 823px; height: 100%;}
+.pager{ margin: 10px 0}
+
+//修改tooltip 提示
+.tooltip.fade.top .tooltip-inner {
+    font-size: 14px !important;
+    border: solid 2px #09c !important;
+    border-radius: 6px !important;
+	background: #555 !important;
+}
+.tooltip.fade.top .tooltip-arrow {
+    height: 7px !important;
+}
+@media \0screen {   
+	.tooltip .tooltip-inner{
+		width:290px;
+	}
+} 
+
+.row .Mylist{margin-bottom:0;}
+.center.operaDiv a{margin:4px 0}
+/*2016-03-22 -------Horan */
+.label.label-info{color:#fff !important;} 
+.VideoRights a{margin-top: 10px;}
+.VideoRights a.btn.btn-primary.btn-sm{margin-top: 0}
+#videomodals div.modal-dialog{width:650px !important;}
+#videomodals div.modal-footer{display:none;}
+#videomodals div.videozone{padding:0}
+.modal-body{overflow: auto; }
+
+/*解析答案字体设置*/
+.tiganDiv p,.tiganDiv font,.tiganDiv a,.tiganDiv div,.tiganDiv span,.tiganDiv { font-size: 14px !important; font-family: "SimSun" ,"Times New Roman" ! important; line-height: 150% !important; }
+.tiganDiv i {font-style: italic !important;}
+.tiganDiv p{margin:2px}
+.tiganPrintDiv {float:left;width:96.5%}

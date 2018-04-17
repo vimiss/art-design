@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+	<!-- 声明变量 -->
+	<property name="log.base" value="F:/iF/Proj/Log/Data/logs/back-ROOT/apilogs" />
+
+	<appender name="STDOUT"	class="ch.qos.logback.core.ConsoleAppender">
+	<layout class="ch.qos.logback.classic.PatternLayout">
+	   <pattern>%-4relative [%thread] %-5level %class - %msg%n</pattern>
+	</layout>
+	</appender>
+	
+	<!-- 按照每天生成日志文件 -->
+	<appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Encoding>UTF-8</Encoding>
+		<file>${log.base}/risk-audit-web.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${log.base}/risk-audit-web.log.%d{yyyy-MM-dd}</FileNamePattern>
+			<MaxHistory>30</MaxHistory>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%C|%M|%p|%X{teid}|%X{rtid}|%X{tnid}|%d{HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n
+			</pattern>
+		</layout>
+	</appender>
+	
+	<appender name="IMPORTANTOPER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Encoding>UTF-8</Encoding>
+		<file>${log.base}/risk-audit-key.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${log.base}/risk-audit-key.log.%d{yyyy-MM-dd}</FileNamePattern>
+			<MaxHistory>30</MaxHistory>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%C|%M|%p|%X{teid}|%X{rtid}|%X{tnid}|%d{HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n
+			</pattern>
+		</layout>
+	</appender>
+	
+	<appender name="DAOFILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Encoding>UTF-8</Encoding>
+		<file>${log.base}/risk-audit-dao.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${log.base}/risk-audit-dao.log.%d{yyyy-MM-dd}</FileNamePattern>
+			<MaxHistory>30</MaxHistory>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%C|%M|%p|%X{teid}|%X{rtid}|%X{tnid}|%d{HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n
+			</pattern>
+		</layout>
+	</appender>
+	
+	<appender name="SERVICEFILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Encoding>UTF-8</Encoding>
+		<file>${log.base}/risk-audit-service.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${log.base}/risk-audit-service.log.%d{yyyy-MM-dd}</FileNamePattern>
+			<MaxHistory>30</MaxHistory>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%C|%M|%p|%X{teid}|%X{rtid}|%X{tnid}|%d{HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n
+			</pattern>
+		</layout>
+	</appender>
+	
+	<appender name="WMPSSERVICEFILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Encoding>UTF-8</Encoding>
+		<file>${log.base}/risk-audit-wmpsservice.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${log.base}/risk-audit-wmpsservice.log.%d{yyyy-MM-dd}</FileNamePattern>
+			<MaxHistory>30</MaxHistory>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%C|%M|%p|%X{teid}|%X{rtid}|%X{tnid}|%d{HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n
+			</pattern>
+		</layout>
+	</appender>
+	
+	<appender name="ACTIONFILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Encoding>UTF-8</Encoding>
+		<file>${log.base}/risk-audit-action.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${log.base}/risk-audit-action.log.%d{yyyy-MM-dd}</FileNamePattern>
+			<MaxHistory>30</MaxHistory>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%C|%M|%p|%X{teid}|%X{rtid}|%X{tnid}|%d{HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n
+			</pattern>
+		</layout>
+	</appender>
+	
+	<appender name="WMPSACTIONFILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Encoding>UTF-8</Encoding>
+		<file>${log.base}/risk-audit-wmpsaction.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${log.base}/risk-audit-wmpsaction.log.%d{yyyy-MM-dd}</FileNamePattern>
+			<MaxHistory>30</MaxHistory>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%C|%M|%p|%X{teid}|%X{rtid}|%X{tnid}|%d{HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n
+			</pattern>
+		</layout>
+	</appender>
+	
+	<appender name="COMMONFILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Encoding>UTF-8</Encoding>
+		<file>${log.base}/risk-audit-common.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${log.base}/risk-audit-common.log.%d{yyyy-MM-dd}</FileNamePattern>
+			<MaxHistory>30</MaxHistory>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%C|%M|%p|%X{teid}|%X{rtid}|%X{tnid}|%d{HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n
+			</pattern>
+		</layout>
+	</appender>
+	
+	<appender name="FILTER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Encoding>UTF-8</Encoding>
+		<file>${log.base}/risk-audit-filter.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${log.base}/risk-audit-filter.log.%d{yyyy-MM-dd}</FileNamePattern>
+			<MaxHistory>30</MaxHistory>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%C|%M|%p|%X{teid}|%X{rtid}|%X{tnid}|%d{HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n
+			</pattern>
+		</layout>
+	</appender>
+
+
+    <logger name="com.el.risk.audit.web" level="debug" additivity="false">
+		<appender-ref ref="webProductLog" />
+	</logger>
+
+	<logger name="chapters.architecture" level="WARN" />
+	<logger name="org.apache.catalina" level="WARN" />
+	<logger name="org.apache" level="WARN" />
+	<logger name="org.springframework" level="ERROR" />
+	<logger name="net.sf.ehcache" level="ERROR" />
+	<logger name="org.hibernate" level="WARN" />
+	<logger name="org.hibernate.SQL" level="WARN" />
+	<logger name="org.hibernate.cache" level="ERROR" />
+	<logger name="com.opensymphony.xwork2" level="ERROR" />
+	<logger name="org.red5.server" level="ERROR" />
+	<logger name="org.red5.io" level="ERROR" />
+	<logger name="com.el.risk.audit.dao" level="ERROR" />
+	<logger name="com.el.risk.audit.service" level="ERROR" />
+	<logger name="com.el.risk.audit.common" level="WARN" additivity="false"/>
+	
+	<logger name="com.el.risk.audit.dao" level="WARN" additivity="false">
+		<appender-ref ref="DAOFILE" />
+	</logger>
+	
+	<logger name="com.el.risk.audit.service" level="INFO" additivity="false">
+		<appender-ref ref="SERVICEFILE" />
+	</logger>
+	
+	<logger name="com.el.risk.audit.web" level="INFO" additivity="false">
+		<appender-ref ref="ACTIONFILE" />
+	</logger>
+	
+	<logger name="com.el.risk.audit.common" level="ERROR" additivity="false">
+		<appender-ref ref="COMMONFILE" />
+	</logger>
+	
+	<logger name="com.eloancn.dkweb.common.ImportantOperateLog" level="INFO" additivity="false">
+		<appender-ref ref="IMPORTANTOPER" />
+	</logger>
+	
+	<!-- 
+	<logger name="com.eloancn.dkweb.filter" level="ERROR" additivity="false">
+		<appender-ref ref="FILTER"></appender-ref>
+	</logger>
+	
+	<logger name="com.eloancn.dkweb.aop.interceptor" level="INFO" additivity="false">
+		<appender-ref ref="STDOUT"></appender-ref>
+	</logger>
+	 -->
+
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
+	</root>
+	
+</configuration>

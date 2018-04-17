@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  	<bean id="archeiveTaskTimerScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <bean class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+                    <property name="jobDetail">
+                        <bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+                            <property name="targetObject" ref="logicBorrowCrmService"/>
+                            <property name="targetMethod" value="exec"/>
+                            <property name="concurrent" value="false"/>
+                        </bean>
+                    </property>
+                    <!-- 2016年11月7号18:00:00 执行一次  -->
+                    <property name="cronExpression" value="0 0 18 7 11 ? *"/>
+                </bean>
+                <bean class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+                    <property name="jobDetail">
+                        <bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+                            <property name="targetObject" ref="logicBorrowCrmService"/>
+                            <property name="targetMethod" value="UserDataSynchronizeTimer"/>
+                            <property name="concurrent" value="false"/>
+                        </bean>
+                    </property>
+                    <!-- 每两个小时执行一次  -->
+                    <!-- <property name="cronExpression" value=" 0 0 0/2 * * ? "/> -->
+                    <property name="cronExpression" value=" 0 0 1/2 * * ? "/>
+                </bean>
+            </list>
+        </property>
+        <property name="autoStartup">
+            <value>true</value>
+        </property>
+        <property name="startupDelay" value="60"/>
+        <property name="quartzProperties">
+            <props>
+                <prop key="org.quartz.threadPool.threadCount">1</prop>
+            </props>
+        </property>
+    </bean>
+    
+    <!-- 同步C+借款数据定时任务-->
+    <!-- <bean id="creditSynchronizTaskTimerScheduler" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject">
+            <bean class="com.el.borrow.soa.service.logic.borrowcredit.LogicBorrowCreditServiceImpl" />
+        </property>
+        <property name="targetMethod" value="task" />
+        <property name="concurrent" value="false" />
+    </bean>
+
+    <bean id="creditTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="creditSynchronizTaskTimerScheduler" />
+        每天00:00运行一次  
+        <property name="cronExpression" value="0 0 00 * * ?" />
+    </bean>
+
+    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="creditTrigger" />
+            </list>
+        </property>
+    </bean> -->
+    
+    <!-- 清洗borrow表中app端的表数据定时任务-->
+    <!-- <bean id="flushBorrowForBeftenderScheduler" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject">
+            <bean class="com.el.borrow.soa.service.logic.beftender.LogicBeftenderServiceImpl" />
+        </property>
+        <property name="targetMethod" value="taskFlushBorrowData"/>
+        <property name="concurrent" value="false" />
+    </bean>
+
+    <bean id="creditTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="flushBorrowForBeftenderScheduler" />
+		每天00:00运行一次
+        <property name="cronExpression" value="0 10 18 11 12 ?" />
+    </bean>
+
+    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="creditTrigger" />
+            </list>
+        </property>
+    </bean> -->
+</beans>

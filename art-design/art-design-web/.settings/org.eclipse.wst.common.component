@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="art-design-web">
+        <wb-resource deploy-path="/" source-path="/target/m2e-jee/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="art-design-dao-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/art-design-dao/art-design-dao">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="art-design-service-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/art-design-service/art-design-service">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="art-design-api-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/art-design-api/art-design-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="art-design-common-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/art-design-common/art-design-common">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="art-design-model-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/art-design-model/art-design-model">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="art-design-web"/>
+        <property name="java-output-path" value="/art-design-web/target/classes"/>
+    </wb-module>
+</project-modules>

@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+	default-lazy-init="true">
+	<dubbo:application name="art-design-provider" owner="art-design"
+		organization="dubbox" />
+	<dubbo:registry protocol="zookeeper" address="${saf-zk-address}"
+		id="elZookeeper" timeout="15000" />
+
+	<dubbo:protocol name="dubbo" port="-1" />
+	<!--<dubbo:monitor protocol="registry" /> -->
+
+	<!--二次贷新加2016016 <dubbo:reference interface="com.el.tender.soa.service.logic.tenderjoinwmps.ILogicTenderJoinWmpsService" 
+		id="logicTenderJoinWmpsService" group="tender-soa" version="1.1.0" timeout="160000" 
+		protocol="dubbo" registry="elZookeeper" check="false" lazy="true" retries="2" 
+		/> -->
+	<dubbo:reference id="herssionEtpProductWebServiceCommonService"
+		group="${borrow-soa.EtpProduct.group}" version="${borrow-soa.EtpProduct.version}"
+		interface=" com.eloancn.nback.serviceapi.etp.EtpProductWebServiceAPI"
+		timeout="12000" check="false" registry="elZookeeper"  retries="0"/>
+	<!--查询盟商 -->
+	<dubbo:reference id="allyCommonService"
+		group="${borrow-soa.allyCommonService.group}" version="${borrow-soa.allyCommonService.version}"
+		interface="com.eloancn.nback.commonapi.AllyCommonAPI" timeout="12000"
+		check="false" registry="elZookeeper"  retries="0"/>
+
+	<dubbo:reference id="allyAPIService" group="${borrow-soa.allyCommonService.group}"
+					 interface="com.eloancn.nback.allyapi.AllyAPI" timeout="1200000"
+					 check="false" registry="elZookeeper" version="${borrow-soa.allyCommonService.version}" />
+
+	<dubbo:reference id="sysLookupAPI" group="${borrow-soa.systemService.group}"
+					 interface="com.eloancn.nback.systemapi.SysLookupAPI" timeout="1200000"
+					 check="false" registry="elZookeeper" version="${borrow-soa.systemService.version}"  retries="0"/>
+	<dubbo:reference id="sysLookupNewAPI" group="${borrow-soa.systemService.group}"
+					 interface="com.eloancn.nback.system.api.SysLookupNewAPI" timeout="1200000"
+					 check="false" registry="elZookeeper" version="${borrow-soa.systemService.version}"  retries="0"/>
+
+
+	<dubbo:reference
+		interface="com.el.borrowtender.soa.service.logic.borrow.ILogicBorrowTenderService"
+		id="logicBorrowTenderService" group="borrowtender-soa-web" version="1.1.0"
+		timeout="16000" protocol="dubbo" registry="elZookeeper" check="false"
+		lazy="true" retries="0" />
+
+	<!-- 详细还款计划 -->
+	<dubbo:reference
+		interface="com.el.borrowtender.soa.service.logic.repaymentdetail.ILogicTenderRepaymentDetailService"
+		id="logicTenderRepaymentDetailService" group="borrowtender-soa-web"
+		version="1.1.0" timeout="16000" protocol="dubbo" registry="elZookeeper"
+		check="false" lazy="true" retries="0" />
+
+	<dubbo:reference
+		interface="com.el.borrowtender.soa.service.logic.tenderoverdue.ILogicTenderOverDueService"
+		id="logicTenderOverDueService" group="${borrowtender-soa.group}" version="1.1.0"
+		timeout="160000" protocol="dubbo" registry="elZookeeper" check="false"
+		lazy="true"  retries="0"/>
+
+	<!-- 用户中心服务 -->
+	<dubbo:reference interface="com.eloancn.usercenter.api.UserBaseInfoService"
+		id="userBaseInfoDubboService" group="${borrow-soa.UserBaseInfoService.group}"
+		version="${borrow-soa.UserBaseInfoService.version}" timeout="60000"
+		protocol="dubbo" registry="elZookeeper" check="false" validation="false" retries="0" />
+
+	<!-- 用户认证信息 -->
+	<dubbo:reference
+		interface="com.el.borrowuser.soa.service.logic.authenticationRecord.ILogicAuthenticationRecordService"
+		id="logicAuthenticationRecordDubboService" group="${borrowuser-soa.group}"
+		version="1.1.0" timeout="60000" protocol="dubbo" registry="elZookeeper"
+		check="false" validation="false" retries="0" />
+	<dubbo:reference
+		interface="com.el.borrowuser.soa.service.logic.userverifyinfo.ILogicUserVerifyInfoService"
+		id="logicUserVerifyInfoDubboService" group="${borrowuser-soa.group}"
+		version="1.1.0" timeout="60000" protocol="dubbo" registry="elZookeeper"
+		check="false" validation="false"  retries="0" />
+
+	<!-- 用户相关 (tender中心) -->
+	<dubbo:reference
+		interface="com.el.borrowtender.soa.service.logic.duser.ILogicUserService"
+		id="logicUserDubboService" group="${borrowtender-soa.group}" version="1.1.0"
+		timeout="60000" protocol="dubbo" registry="elZookeeper" check="false"
+		validation="false"   retries="0"/>
+
+	<!-- 冻结流水 (tender中心) -->
+	<dubbo:reference
+		interface="com.el.borrowtender.soa.service.logic.dfreezingfunds.ILogicFreezingFundsService"
+		id="logicFreezingFundsDubboService" group="${borrowtender-soa.group}"
+		version="1.1.0" timeout="60000" protocol="dubbo" registry="elZookeeper"
+		check="false" validation="false"  retries="0" />
+
+	<!-- 垫付流水 (tender中心) -->
+	<dubbo:reference
+		interface="com.el.borrowtender.soa.service.logic.dtenderadvance.ILogicTenderAdvanceService"
+		id="logicTenderAdvanceDubboService" group="${borrowtender-soa.group}"
+		version="1.1.0" timeout="60000" protocol="dubbo" registry="elZookeeper"
+		check="false" validation="false"  retries="0" />
+
+	<!-- 标的 -->
+	<dubbo:reference
+		interface="com.el.borrowtender.soa.service.logic.dtender.ILogicTenderService"
+		id="logicTenderDubboService" group="${borrowtender-soa.group}" version="1.1.0"
+		timeout="120000" protocol="dubbo" registry="elZookeeper" check="false"
+		validation="false"   retries="0"/>
+
+	<!--充值订单 -->
+	<dubbo:reference
+		interface="com.el.borrowtender.soa.service.logic.borrowldys.ILogicBorrowLdysService"
+		id="logicBorrowLdysDubboService" group="${borrowtender-soa.group}" version="1.1.0"
+		timeout="60000" protocol="dubbo" registry="elZookeeper" check="false"
+		validation="false"  retries="0" />
+
+	<!-- 用户相关 测试 -->
+	<dubbo:reference
+		interface="com.el.borrow.soa.service.logic.user.ILogicUserService" id="logicUserDubboServiceTest"
+		group="borrow-soa" version="1.1.0" timeout="60000" protocol="dubbo"
+		registry="elZookeeper" check="false" validation="false"  retries="0" />
+	<!-- 标相关 测试 -->
+	<!-- <dubbo:reference
+		interface="com.el.borrow.soa.service.logic.borrow.ILogicBorrowService"
+		id="logicBorrowDubboServiceTest" group="borrow-soa" version="1.1.0"
+		timeout="60000" protocol="dubbo" registry="elZookeeper" check="false"
+		validation="false" retries="1" /> -->
+	<!-- 还款计划 测试 -->
+	<dubbo:reference
+		interface="com.el.borrow.soa.service.logic.tenderRepaymentDetail.ILogicTenderRepaymentDetailService"
+		id="logicTenderRepaymentDetailDubboServiceTest" group="borrow-soa"
+		version="1.1.0" timeout="60000" protocol="dubbo" registry="elZookeeper"
+		check="false" validation="false"  retries="0" />
+
+	<!-- 线上充值订单查询 -->
+	<dubbo:reference
+		interface="com.el.borrowtender.soa.service.logic.onlinerecharge.ILogicOnlineRechargeService"
+		id="logicOnlineRechargeDubboService" group="${borrowtender-soa.group}"
+		version="1.1.0" timeout="60000" protocol="dubbo" registry="elZookeeper"
+		check="false" validation="false"  retries="0" />
+	<!-- 线下充值订单查询 -->
+	<dubbo:reference
+		interface="com.el.borrowtender.soa.service.logic.rechargeinfo.ILogicRechargeInfoService"
+		id="logicRechargeInfoDubboService" group="${borrowtender-soa.group}"
+		version="1.1.0" timeout="60000" protocol="dubbo" registry="elZookeeper"
+		check="false" validation="false"  retries="0" />
+	<!-- PC端登录信息 -->
+	<dubbo:reference
+		interface="com.el.other.soa.service.logic.loginlog.ILogicLoginlogService"
+		id="logicLoginlogDubboService" group="${borrowtender-soa.group}" version="1.1.0"
+		timeout="60000" protocol="dubbo" registry="elZookeeper" check="false"
+		validation="false"   retries="0"/>
+	<!-- 老库提现卡信息 -->
+	<dubbo:reference
+		interface="com.el.borrowtender.soa.service.logic.personalaccount.ILogicPersonalAccountService"
+		id="logicPersonalAccountDubboService" group="${borrowtender-soa.group}"
+		version="1.1.0" timeout="60000" protocol="dubbo" registry="elZookeeper"
+		check="false" validation="false"   retries="0"/>
+
+	<!-- 新分控查询地域 -->
+	<dubbo:reference id="hessianSysAreaService" group="${borrow-soa.systemService.group}"
+		interface="com.eloancn.nback.systemapi.SysAreaAPI" timeout="1200000"
+		check="false" registry="elZookeeper" version="${borrow-soa.systemService.version}"  retries="0"/>
+	<!-- 新分控查询地域 -->
+	<dubbo:reference id="newOldAreaService" group="${borrow-soa.systemService.group}"
+		interface="com.eloancn.nback.systemapi.SysAreaOldAreaAPI" timeout="1200000"
+		check="false" registry="elZookeeper" version="${borrow-soa.systemService.version}" retries="0" />
+	<!-- 代扣卡 -->
+	<dubbo:reference id="logicUmpSmsUserDubboService"
+		group="${borrowtender-soa.group}"
+		interface="com.el.borrowtender.soa.service.logic.umpsmsuser.ILogicUmpSmsUserService"
+		timeout="1200000" check="false" registry="elZookeeper" version="1.1.0"  retries="0"/>
+
+
+	<!-- 查询老用户紧急联系人 -->
+	<dubbo:reference id="logicUserNocategoryService" group="${borrowtender-soa.group}"
+		interface="com.el.borrowtender.soa.service.logic.dusernocategory.ILogicUserNocategoryService"
+		timeout="1200000" check="false" registry="elZookeeper" version="1.1.0"  retries="0"/>
+
+	<!-- 查询老用户担保人 -->
+	<dubbo:reference id="logicTenderWarrantService" group="${borrowtender-soa.group}"
+		interface="com.el.borrowtender.soa.service.logic.dtenderwarrant.ILogicTenderWarrantService"
+		timeout="1200000" check="false" registry="elZookeeper" version="1.1.0"  retries="0"/>
+
+	<!-- 测试使用 -->
+	<dubbo:reference
+		interface="com.el.borrowtender.soa.service.logic.documentsignature.ILogicDocumentSignatureService"
+		id="logicDocumentSignatureService" group="${borrowtender-soa.group}"
+		version="1.1.0" timeout="60000" protocol="dubbo" registry="elZookeeper"
+		check="false" validation="false"  retries="0" />
+	<!-- 测试使用 -->
+	<dubbo:reference
+		interface="com.el.borrowtender.soa.service.logic.tenderstakeholders.ILogicTenderStakeholdersService"
+		id="logicTenderStakeholdersService" group="${borrowtender-soa.group}"
+		version="1.1.0" timeout="60000" protocol="dubbo" registry="elZookeeper"
+		check="false" validation="false"   retries="0"/>
+
+	<!-- 统计借款总金额、借款总笔数、借款总人数 -->
+	<dubbo:reference
+		interface="com.el.borrowtender.soa.service.logic.statistics.ILogicTenderStatisticsService"
+		id="logicTenderStatisticsService" group="${borrowtender-soa.group}"
+		version="1.1.0" timeout="60000" protocol="dubbo" registry="elZookeeper"
+		check="false" validation="false"  retries="0" />
+
+	<!-- 查询电子借条插入数据 -->
+	<dubbo:reference interface="com.eloancn.tender.TenderAPPAPI"
+		id="tenderAPPAPI" group="destress-soa-cat-yangqw" version="${borrow-soa.destress.version}"
+		timeout="60000" protocol="dubbo" registry="elZookeeper" check="false"
+		validation="false"  />
+
+	<!-- 查询老库中的借款数据 -->
+	<dubbo:reference
+		interface="com.el.borrowtender.soa.service.logic.dtender.ILogicTenderService"
+		id="logicTenderService" group="${borrowtender-soa.group}" version="1.1.0"
+		timeout="120000" protocol="dubbo" registry="elZookeeper" check="false"
+		validation="false"  retries="0" />
+
+	<!-- 查询借款初审通过时间 -->
+	<dubbo:reference
+		interface="com.el.borrowtender.soa.service.logic.tenderfirsttrial.ILogicTenderFirstTrialService"
+		id="logicTenderFirstTrialService" group="${borrowtender-soa.group}"
+		version="1.1.0" timeout="60000" protocol="dubbo" registry="elZookeeper"
+		check="false" validation="false"  retries="0" />
+
+	<!-- 查询联保贷编码 -->
+	<dubbo:reference
+		interface="com.el.borrowtender.soa.service.logic.tenderlbdcode.ILogicTenderLbdcodeService"
+		id="logicTenderLbdcodeService" group="${borrowtender-soa.group}" version="1.1.0"
+		timeout="60000" protocol="dubbo" registry="elZookeeper" check="false"
+		validation="false"  retries="0" />
+
+	<!-- 查询翼企贷借款权限 -->
+	<dubbo:reference
+		interface="com.el.borrowtender.soa.service.logic.anytimemaxloanamount.ILogicAnytimeMaxloanamountEnterpriseService"
+		id="LogicAnytimeMaxloanamountEnterpriseService" group="${borrowtender-soa.group}"
+		version="1.1.0" timeout="60000" protocol="dubbo" registry="elZookeeper"
+		check="false" validation="false"  retries="0" />
+
+	<!-- 添加意向借款 -->
+	<dubbo:reference
+		interface="com.el.borrowtender.soa.service.logic.borrowapply.ILogicBorrowApplyService"
+		id="logicBorrowApplyService" group="${borrowtender-soa.group}" version="1.1.0"
+		timeout="60000" protocol="dubbo" registry="elZookeeper" check="false"
+		validation="false"  retries="0" />
+
+	<!-- credit007 -->
+	<dubbo:reference
+		interface="com.el.borrowtender.soa.service.logic.creditZeroZeroSeven.ILogicCreditZeroZeroSevenService"
+		id="logicCreditZeroZeroSevenService" group="${borrowtender-soa.group}"
+		version="1.1.0" timeout="60000" protocol="dubbo" registry="elZookeeper"
+		check="false" validation="false"  retries="0" />
+	<!-- 获取职业 -->
+	<dubbo:reference interface="com.eloancn.user.UserIndustryAPI"
+		id="userIndustryAPI" group="${borrow-soa.destress.group}" version="${borrow-soa.destress.version}"
+		timeout="60000" protocol="dubbo" registry="elZookeeper" check="false"
+		validation="false"  retries="0" />
+
+	<!-- C+007查询复额条件 -->
+	<dubbo:reference interface="com.eloancn.credit.CreditPlusConfigAPI"
+		id="creditConfig" group="${borrow-soa.destress.group}" version="${borrow-soa.destress.version}"
+		timeout="50000" protocol="dubbo" registry="elZookeeper" lazy="true"
+		validation="false" check="false" retries="0" />
+
+	<!-- 同步借款数据到盟商 -->
+	<dubbo:reference interface="com.eloancn.web.agent.service.TenderService"
+		id="tenderService" group="borrow-agent-app" version="1.1.0" timeout="60000"
+		protocol="dubbo" registry="elZookeeper" check="false" lazy="true"
+		 />
+
+	<!-- 查询供应链-保分期产品配置 -->
+	<dubbo:reference
+		interface="com.el.borrowtender.soa.service.logic.coreenterpriserate.ILogicCoreEnterpriseRateService"
+		id="logicCoreEnterpriseRateService" group="${borrowtender-soa.group}"
+		version="1.1.0" timeout="60000" protocol="dubbo" registry="elZookeeper"
+		check="false" lazy="true"  retries="0" />
+
+	<!-- 查询保分期项目信息 -->
+	<dubbo:reference
+		interface="com.el.borrowtender.soa.service.logic.tenderenterprise.ILogicTenderEnterpriseService"
+		id="logicTenderEnterpriseService" group="${borrowtender-soa.group}"
+		version="1.1.0" timeout="60000" protocol="dubbo" registry="elZookeeper"
+		check="false" lazy="true"  retries="0" />
+
+	<dubbo:reference
+		interface="com.el.borrowtender.soa.service.logic.borrowtypeborrowcrowd.ILogicBorrowtypeBorrowcrowdService"
+		id="logicBorrowtypeBorrowcrowdService" group="${borrowtender-soa.group}"
+		version="1.1.0" timeout="60000" protocol="dubbo" registry="elZookeeper"
+		check="false" lazy="true"  retries="0" />
+
+	<dubbo:reference
+		interface="com.el.borrowtender.soa.service.logic.userareafranchisee.ILogicUserAreaFranchiseeService"
+		id="logicUserAreaFranchiseeService" group="${borrowtender-soa.group}"
+		version="1.1.0" timeout="60000" protocol="dubbo" registry="elZookeeper"
+		check="false" lazy="true"  retries="0" />
+
+	<!-- 保存用户新的区域信息 -->
+	<dubbo:reference
+		interface="com.el.borrowuser.soa.service.logic.userarea.ILogicUserAreaService"
+		id="logicUserAreaService" group="${borrowuser-soa.group}" version="1.1.0"
+		timeout="60000" protocol="dubbo" registry="elZookeeper" check="false"
+		lazy="true"  retries="0" />
+	<!-- 同步C+借款数据 -->
+	<dubbo:reference
+		interface="com.el.borrowtender.soa.service.logic.tendercreditplus.ILogicTenderCreditPlusService"
+		id="logicTenderCreditPlusService" group="${borrowtender-soa.group}" version="1.1.0"
+		timeout="80000" protocol="dubbo" registry="elZookeeper" check="false"
+		lazy="true"  retries="0" />
+	<!-- 获取紧急联系人信息 -->
+	<dubbo:reference
+		interface="com.el.borrowuser.soa.service.logic.borrowuserconcat.ILogicBorrowUserConcatService"
+		id="logicBorrowUserConcatService" group="${borrowuser-soa.group}" version="1.1.0"
+		timeout="60000" protocol="dubbo" registry="elZookeeper" check="false"
+		lazy="true" retries="0"  />
+		
+	<!-- 保存确认借贷视频url -->
+	<dubbo:reference
+		interface="com.el.borrowtender.soa.service.logic.tenderensurevideo.ILogicTenderEnsureVideoService"
+		id="logicTenderEnsureVideoService" group="${borrowtender-soa.group}" version="1.1.0"
+		timeout="60000" protocol="dubbo" registry="elZookeeper" check="false"
+		lazy="true"  retries="0" />
+	
+	<!-- 查询产业链标信息 -->
+	<dubbo:reference
+		interface="com.el.borrowtender.soa.service.logic.coreenterprisemanagement.ILogicCoreEnterpriseManagementService"
+		id="logicCoreEnterpriseManagementService" group="${borrowtender-soa.group}" version="1.1.0"
+		timeout="60000" protocol="dubbo" registry="elZookeeper" check="false"
+		lazy="true"  retries="0" />
+	<!-- 查询电子借条和服务协议 -->
+	<dubbo:reference
+		interface="com.eloancn.ecs.api.ElectronicContractAPI"
+		id="electronicContractAPI" group="${back-ecs-soa.group}" version="${back-ecs-soa.version}"
+		timeout="60000" protocol="dubbo" registry="elZookeeper" check="false"
+		lazy="true"   retries="0"/>
+
+	<!-- 用户紧急联系人-->
+	<dubbo:reference
+			interface="com.el.borrowtender.soa.service.logic.duserconcat.ILogicUserConcatService"
+			id="logicUserConcatService" group="${borrowtender-soa.group}" version="1.1.0"
+			timeout="60000" protocol="dubbo" registry="elZookeeper" check="false"
+			lazy="true"  retries="0" />
+	
+	<!--查询用户基本信息及企业信息 -->
+	<dubbo:reference
+			interface="com.el.borrowuser.soa.service.logic.userbasicinfo.ILogicUserBasicInfoService"
+			id="logicUserBasicInfoService" group="${borrowuser-soa.group}" version="1.1.0"
+			timeout="60000" protocol="dubbo" registry="elZookeeper" check="false"
+			lazy="true"  retries="0" />
+			
+	<!--查询用户信用信息 -->
+	<dubbo:reference
+			interface="com.el.borrowuser.soa.service.logic.usercreditdata.ILogicUserCreditDataService"
+			id="logicUserCreditDataService" group="${borrowuser-soa.group}" version="1.1.0"
+			timeout="60000" protocol="dubbo" registry="elZookeeper" check="false"
+			lazy="true"  retries="0" />
+	
+	<!-- 查询用户五级行业表 -->
+	<dubbo:reference
+			interface="com.el.borrowuser.soa.service.logic.userindustry.ILogicUserIndustryService"
+			id="logicUserIndustryService" group="${borrowuser-soa.group}" version="1.1.0"
+			timeout="60000" protocol="dubbo" registry="elZookeeper" check="false"
+			lazy="true"  retries="0" />
+			
+	<!-- 查询企业用户股东信息 -->		
+	<dubbo:reference
+			interface="com.el.borrowuser.soa.service.logic.usershareholder.ILogicUserShareholderService"
+			id="logicUserShareholderService" group="${borrowuser-soa.group}" version="1.1.0"
+			timeout="60000" protocol="dubbo" registry="elZookeeper" check="false"
+			lazy="true"   retries="0"/>
+			
+	<!-- 查询同城area信息 -->		
+	<dubbo:reference
+			interface="com.el.borrowtender.soa.service.logic.tongchengarea.ILogicTongchengAreaService"
+			id="logicTongchengAreaService" group="${borrowtender-soa.group}" version="1.1.0"
+			timeout="60000" protocol="dubbo" registry="elZookeeper" check="false"
+			lazy="true"  />		
+			
+	<!-- 保存日志信息 -->		
+	<dubbo:reference
+			interface="com.el.borrowuser.soa.service.logic.externalinterfacelog.ILogicExternalinterfacelogService"
+			id="logicExternalinterfacelogService" group="${borrowuser-soa.group}" version="1.1.0"
+			timeout="60000" protocol="dubbo" registry="elZookeeper" check="false"
+			lazy="true"   retries="0"/>
+			
+	<!-- 查询二次贷白名单-->
+	<dubbo:reference
+			interface="com.el.borrowtender.soa.service.logic.tendersecwhitelist.ILogicTenderSecWhiteListService"
+			id="logicTenderSecWhiteListService" group="${borrowtender-soa.group}" version="1.1.0"
+			timeout="60000" protocol="dubbo" registry="elZookeeper" check="false"
+			lazy="true" retries="2" />
+	
+	<!-- C+发标验证 -->
+	<dubbo:reference
+			interface="com.el.borrowtender.soa.service.logic.tendercredit.ILogicTenderCreditService" id="logicTenderCreditService" 
+			group="${borrowtender-soa.group}" version="1.1.0" timeout="60000" protocol="dubbo" registry="elZookeeper" check="false"
+			lazy="true" retries="2"/>
+	<!--new user-->
+	<dubbo:reference id="enterpriseService" group="usercenter_soa_pro" interface="com.eloancn.usercenter.api.EnterpriseService"
+					 timeout="1200000" check="false" registry="elZookeeper"  version="1.0"  retries="0"/>
+
+	<dubbo:reference id="bankAuthManager" interface="com.eloancn.account.api.IBankAuthService" group="new-account-soa" version="1.0"
+					 registry="elZookeeper" protocol="dubbo" timeout="6000" check="false" lazy="true" retries="0"/>
+
+	<!-- 系统参数-->
+	<dubbo:reference interface="com.el.other.soa.service.logic.systemparameter.ILogicSystemParameterService" id="logicSystemParameterService" group="${borrowtender-soa.group}" version="1.1.0"
+					 timeout="60000" protocol="dubbo" registry="elZookeeper" check="false" lazy="true" retries="0" />
+</beans>

@@ -1,0 +1,18 @@
+/*权限管理页面样式*/
+.position{
+	overflow: hidden;
+	font-size: 12px;
+}
+.p_left{
+	float: left;
+}
+.p_right{
+	float: right;
+}
+.p_right dl{
+	float: left;
+	margin-left: 20px;
+}
+.p_right dt,.p_right dd{
+	float: left;
+}
