@@ -15,29 +15,12 @@ import org.apache.commons.logging.LogFactory;
 import com.art.design.common.Constant;
 
 /**
- * Created by zscome on 15-4-26.
+ * Date Tool.
  */
 public class DateUtil extends DateUtils {
 
-    public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException {
-
-//        System.out.print(getCurrentTime());
-
-//        Date currentDate = DateUtil.createDate("2015-05-03 12:01:01", YYYYMMDD_HHMMSS);
-//        Date d = DateUtil.getAfterHoursDate(currentDate, 1);
-//        System.out.println(DateUtil.format2AddFirstTime(new Timestamp(d.getTime())));
-//        System.out.println(DateUtil.format2AddLastTime(new Timestamp(d.getTime())));
-        
-        try {
-			System.out.println(DateUtil.getStartDate(DateUtil.getTodayTime()));
-			System.out.println(DateUtil.getEndDate(DateUtil.getTodayTime()));
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    }
-
     private static final Log logger = LogFactory.getLog(DateUtil.class);
+    
     public static final String YYYYMMDD_HHMMSS = "yyyy-MM-dd HH:mm:ss";
     public static final String YYYYMMDD = "yyyy-MM-dd";
     public static final String YYYYMMDD_000000 = "yyyy-MM-dd 00:00:00";
@@ -78,8 +61,7 @@ public class DateUtil extends DateUtils {
         try {
             returnDate = sdf.parse(sdf.format(d));
         } catch (ParseException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+        	logger.error("字符串转化为Date失败,原因是：", e);
         }
         return returnDate;
     }
@@ -478,6 +460,7 @@ public class DateUtil extends DateUtils {
             return stringDateToInt(str);
         }
     }
+    
     public static Date dateIntToDate(Integer time) {
         if(time != null && time.intValue() != 0) {
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
