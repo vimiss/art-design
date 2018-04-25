@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<para>
+	<!-- 其中status(0:未使用,1:使用中) -->
+	<select name="status_param" desc="是否使用" status="1">
+		<option value="0" text="未使用" status="1" />
+		<option value="1" text="使用中" status="1" />
+	</select>
+	<!-- 用户账号 -->
+	<select name="account_status_param" desc="账号状态" status="1">
+		<option value="0" text="正常" status="1" />
+		<option value="1" text="注销" status="1" />
+		<option value="2" text="离职" status="1" />
+		<option value="3" text="其它" status="1" />
+	</select>
+	<!-- 审核状态 -->
+	<select name="audit_status_param" desc="审核状态" status="1">
+		<option value="0" text="未审核" status="1" />
+		<option value="1" text="审核中" status="1" />
+		<option value="2" text="被驳回" status="1" />
+		<option value="3" text="已通过" status="1" />
+	</select>
+	<!-- 用户身份类型 -->
+	<select name="user_type_param" desc="用户身份类型" status="1">
+		<option value="1" text="个人投资者" status="1" />
+		<option value="2" text="机构投资者" status="1" />
+	</select>
+	<!-- 账号类型 -->
+	<select name="account_type_param" desc="账号类型" status="1">
+		<option value="1" text="手机" status="1" />
+		<option value="2" text="微信" status="1" />
+		<option value="3" text="QQ" status="1" />
+		<option value="4" text="新浪微博" status="1" />
+		<option value="5" text="腾讯微博" status="1" />
+		<option value="6" text="平台账号" status="1" />
+	</select>
+	<!-- 账号开通类型 -->
+	<select name="account_open_type_param" desc="账号开通类型" status="1">
+		<option value="01" text="android_注册" status="1" />
+		<option value="02" text="ios_注册" status="1" />
+		<option value="03" text="投资人页面开通" status="1" />
+		<option value="04" text="理财师页面开通" status="1" />
+		<option value="05" text="账号管理页面开通" status="1" />
+		<option value="06" text="二维码快捷注册" status="1" />
+		<option value="07" text="理财师邀请注册" status="1" />
+	</select>
+	<!-- 证件类型 -->
+	<select name="cert_type_param" desc="证件类型" status="1">
+		<option value="01" text="身份证" status="1" />
+<!-- 		<option value="02" text="中国护照" status="1" /> -->
+<!-- 		<option value="03" text="外籍护照" status="1" /> -->
+<!-- 		<option value="04" text="军官证" status="1" /> -->
+<!-- 		<option value="05" text="士兵证" status="1" /> -->
+<!-- 		<option value="06" text="台胞证" status="1" /> -->
+<!-- 		<option value="07" text="港澳居民来往内地通行证" status="1" /> -->
+<!-- 		<option value="08" text="社会信用代码" status="1" /> -->
+<!-- 		<option value="09" text="营业执照" status="1" /> -->
+<!-- 		<option value="10" text="组织机构代码证" status="1" /> -->
+<!-- 		<option value="11" text="其它" status="1" /> -->
+	</select>
+	<!-- 关联关系类型 -->
+	<select name="relation_type_param" desc="关联关系类型" status="1">
+		<option value="1" text="投资人主动关联投资顾问" status="1" />
+		<option value="2" text="投资顾问邀请投资人" status="1" />
+		<option value="3" text="投资人分享投资顾问" status="1" />
+		<option value="4" text="系统分配投资顾问" status="1" />
+	</select>
+	<!-- 关联关系状态 -->
+	<select name="relation_status_param" desc="关联关系状态" status="1">
+		<option value="0" text="未关联" status="1" />
+		<option value="1" text="已关联" status="1" />
+		<option value="2" text="已失效" status="1" />
+	</select>
+	<!-- 性别类型 -->
+	<select name="gender_type_param" desc="性别类型" status="1">
+		<option value="1" text="男" status="1" />
+		<option value="2" text="女" status="1" />
+<!-- 		<option value="3" text="未知" status="0" /> -->
+	</select>
+	<!-- 年龄段类型 -->
+	<select name="age_type_param" desc="年龄段类型" status="1">
+		<option value="0" text="35岁及以下" status="1" />
+		<option value="1" text="36-45岁" status="1" />
+		<option value="2" text="46-55岁" status="1" />
+		<option value="3" text="56-65岁" status="1" />
+		<option value="4" text="66-75岁" status="1" />
+		<option value="5" text="75岁及以上" status="1" />
+	</select>
+	<!-- 从业年限 -->
+	<select name="archive_period_type_param" desc="从业年限类型" status="1">
+		<option value="01" text="1年" status="1" />
+		<option value="02" text="2年" status="1" />
+		<option value="03" text="3年" status="1" />
+		<option value="04" text="4年" status="1" />
+		<option value="05" text="5年" status="1" />
+		<option value="06" text="6年" status="1" />
+		<option value="07" text="7年" status="1" />
+		<option value="08" text="8年" status="1" />
+		<option value="09" text="9年" status="1" />
+		<option value="10" text="10年" status="1" />
+		<option value="11" text="11年" status="1" />
+		<option value="12" text="12年" status="1" />
+		<option value="13" text="13年" status="1" />
+		<option value="14" text="14年" status="1" />
+		<option value="15" text="15年" status="1" />
+		<option value="16" text="16年" status="1" />
+		<option value="17" text="17年" status="1" />
+		<option value="18" text="18年" status="1" />
+		<option value="19" text="19年" status="1" />
+		<option value="20" text="20年" status="1" />
+		<option value="21" text="21年" status="1" />
+		<option value="22" text="22年" status="1" />
+		<option value="23" text="23年" status="1" />
+		<option value="24" text="24年" status="1" />
+		<option value="25" text="25年" status="1" />
+		<option value="26" text="26年" status="1" />
+		<option value="27" text="27年" status="1" />
+		<option value="28" text="28年" status="1" />
+		<option value="29" text="29年" status="1" />
+		<option value="30" text="30年" status="1" />
+		<option value="31" text="31年" status="1" />
+		<option value="32" text="32年" status="1" />
+		<option value="33" text="33年" status="1" />
+		<option value="34" text="34年" status="1" />
+		<option value="35" text="35年" status="1" />
+		<option value="36" text="36年" status="1" />
+		<option value="37" text="37年" status="1" />
+		<option value="38" text="38年" status="1" />
+		<option value="39" text="39年" status="1" />
+		<option value="40" text="40年" status="1" />
+		<option value="41" text="41年" status="1" />
+		<option value="42" text="42年" status="1" />
+		<option value="43" text="43年" status="1" />
+		<option value="44" text="44年" status="1" />
+		<option value="45" text="45年" status="1" />
+		<option value="46" text="46年" status="1" />
+		<option value="47" text="47年" status="1" />
+		<option value="48" text="48年" status="1" />
+		<option value="49" text="49年" status="1" />
+		<option value="50" text="50年" status="1" />
+	</select>
+	<!-- 是否类型 -->
+	<select name="yes_no_type_param" desc="是否类型" status="1">
+		<option value="0" text="否" status="1" />
+		<option value="1" text="是" status="1" />
+	</select>
+	<!-- 审核结果类型 -->
+	<select name="result_type_param" desc="审核结果类型" status="1">
+		<option value="0" text="拒绝" status="1" />
+		<option value="1" text="通过" status="1" />
+	</select>
+	<!-- 文件类型 -->
+	<select name="file_type_param" desc="文件类型" status="1">
+		<option value="01" text="图片" status="1" />
+		<option value="02" text="文件" status="1" />
+		<option value="03" text="视频" status="1" />
+	</select>
+	<!-- 文件来源类型 -->
+	<select name="source_type_param" desc="文件来源类型" status="1">
+		<option value="01" text="资产认证" status="1" />
+		<option value="02" text="理财师认证" status="1" />
+		<option value="03" text="项目分期" status="1" />
+		<option value="04" text="对APP评价" status="1" />
+		<option value="05" text="头像照片" status="1" />
+		<option value="06" text="全身照片" status="1" />
+	</select>
+	<!-- 评论类型 -->
+	<select name="feedback_type_param" desc="评论类型" status="1">
+		<option value="01" text="对用户" status="1" />
+		<option value="02" text="对公告" status="1" />
+		<option value="03" text="对视频" status="1" />
+		<option value="04" text="对产品" status="1" />
+		<option value="05" text="对APP" status="1" />
+	</select>
+	<!-- 阀值类型 -->
+	<select name="config_type_param" desc="阀值类型" status="1">
+		<option value="01" text="问卷" status="1" />
+		<option value="02" text="等级" status="1" />
+		<option value="03" text="积分" status="1" />
+		<option value="04" text="奖章" status="1" />
+		<option value="05" text="任务" status="1" />
+		<option value="06" text="预约倍数" status="1" />
+		<option value="07" text="投资积分分母" status="1" />
+	</select>
+	<!-- 文章类型 -->
+	<select name="spread_type_param" desc="文章类型" status="1">
+		<option value="01" text="早知道" status="1" />
+		<option value="02" text="投条号" status="1" />
+		<option value="03" text="名家谈" status="1" />
+		<option value="04" text="大视野" status="1" />
+		<option value="05" text="项目分期资料" status="1" />
+	</select>
+	<!-- 问卷类型 -->
+	<select name="question_type_param" desc="问卷类型" status="1">
+		<option value="1" text="风险偏好" status="1" />
+	</select>
+	<!-- 产品类型 -->
+	<select name="product_type_param" desc="产品类型" status="1">
+		<option value="01" text="基金" status="1" />
+<!-- 		<option value="02" text="理财" status="0" /> -->
+	</select>
+	<!-- 项目类型 -->
+	<select name="item_type_param" desc="项目类型" status="1">
+		<option value="01" text="劳斯莱斯" status="1" />
+		<option value="02" text="兰博基尼" status="1" />
+		<option value="03" text="法拉利" status="1" />
+		<option value="04" text="凯迪拉克" status="1" />
+		<option value="05" text="保时捷" status="1" />
+		<option value="06" text="奔驰" status="1" />
+		<option value="07" text="宝马" status="1" />
+		<option value="08" text="奥迪" status="1" />
+		<option value="09" text="大众" status="1" />
+	</select>
+	<!-- 项目状态 -->
+	<select name="item_status_param" desc="项目状态" status="1">
+		<option value="01" text="录入" status="1" />
+		<option value="02" text="募集中" status="1" />
+		<option value="03" text="已结束" status="1" />
+	</select>
+	<!-- 风险分类 -->
+	<select name="risk_type_param" desc="风险分类" status="1">
+		<option value="1" text="极低" status="1" />
+		<option value="2" text="低" status="1" />
+		<option value="3" text="中" status="1" />
+		<option value="4" text="高" status="1" />
+		<option value="5" text="极高" status="1" />
+	</select>
+	<!-- 分期状态 -->
+	<select name="period_status_param" desc="分期状态" status="1">
+		<option value="01" text="录入" status="1" />
+		<option value="02" text="募集中" status="1" />
+		<option value="03" text="募集暂停" status="1" />
+		<option value="04" text="募集完成" status="1" />
+		<option value="05" text="已结算" status="1" />
+		<option value="06" text="募集失败" status="1" />
+	</select>
+	<!-- 分期申请状态 -->
+	<select name="apply_status_param" desc="分期申请状态" status="1">
+		<option value="00" text="录入" status="1" />
+		<option value="01" text="预约中" status="1" />
+		<option value="02" text="已确认" status="1" />
+		<option value="03" text="已生效" status="1" />
+		<option value="04" text="可赎回" status="1" />
+		<option value="05" text="已失效" status="1" />
+		<option value="06" text="已结束" status="1" />
+	</select>
+	<!-- 订单失败原因类型 -->
+	<select name="period_fail_type_param" desc="订单失败原因类型" status="1">
+		<option value="01" text="打款时间已过未打款" status="1" />
+		<option value="02" text="投资人主动放弃" status="1" />
+		<option value="03" text="订单额度已超额" status="1" />
+		<option value="04" text="分期募集失败" status="1" />
+	</select>
+	<!-- 短信服务状态 -->
+	<select name="sms_status_param" desc="短信服务状态" status="1">
+		<option value="0" text="未激活" status="1" />
+		<option value="1" text="已激活" status="1" />
+	</select>
+	<select name="sms_serve_type_param" desc="短信服务类型" status="1">
+		<option value="01" text="优先" status="1" />
+		<option value="02" text="普通" status="1" />
+	</select>
+	<!-- 短信服务时间限制 -->
+	<select name="sms_limit_status_param" desc="短信服务时间限制" status="1">
+		<option value="0" text="不限制" status="1" />
+		<option value="1" text="限制" status="1" />
+	</select>
+	<!-- 短信服务优先级 -->
+	<select name="sms_priority_type_param" desc="短信服务优先级" status="1">
+		<option value="1" text="低" status="1" />
+		<option value="2" text="中低" status="1" />
+		<option value="3" text="中" status="1" />
+		<option value="4" text="中高" status="1" />
+		<option value="5" text="高" status="1" />
+	</select>
+	<!-- 短信类型 -->
+	<select name="sms_type_param" desc="短信类型" status="1">
+		<option value="01" text="即时" status="1" />
+		<option value="02" text="定时" status="1" />
+	</select>
+	<!-- 短信发送类型 -->
+	<select name="sms_send_type_param" desc="短信发送类型" status="1">
+		<option value="1" text="平台已发送" status="1" />
+		<option value="2" text="服务商已发送" status="1" />
+	</select>
+	<!-- 短信处理状态 -->
+	<select name="sms_deal_status_param" desc="短信处理状态" status="1">
+		<option value="0" text="未处理" status="1" />
+		<option value="1" text="已处理" status="1" />
+		<option value="2" text="无匹配记录" status="1" />
+		<option value="3" text="重新发送" status="1" />
+		<option value="4" text="多余记录" status="1" />
+	</select>
+	<!-- jpush推送平台 -->
+	<select name="msgpush_plantform_type_param" desc="推送平台" status="1">
+		<option value="0" text="all" status="1" />
+		<option value="1" text="ios" status="1" />
+		<option value="2" text="android" status="1" />
+	</select>
+	<!-- jpush推送类型 -->
+	<select name="msgpush_push_type_param" desc="推送类型" status="1">
+		<option value="0" text="消息" status="1" />
+		<option value="1" text="通知" status="1" />
+	</select>
+	<!-- 用户风险偏好类型 -->
+	<select name="user_risk_type_param" desc="用户风险偏好类型" status="1">
+		<option value="1" text="激进型" status="1" />
+		<option value="2" text="平衡型" status="1" />
+		<option value="3" text="稳健型" status="1" />
+		<option value="4" text="谨慎型" status="1" />
+	</select>
+	<!-- 项目收益方式 -->
+	<select name="item_income_type_param" desc="项目收益方式" status="1">
+		<option value="01" text="固定收益" status="1" />
+<!-- 		<option value="02" text="净值" status="1" /> -->
+	</select>
+	<!-- 机构类型 -->
+	<select name="org_type_param" desc="机构类型" status="1">
+	</select>
+	<!-- 省类型 -->
+	<select name="province_type_param" desc="省类型" status="1">
+	</select>
+	<!-- 市类型 -->
+	<select name="city_type_param" desc="市类型" status="1">
+	</select>
+	<!-- 公告类型 -->
+	<select name="fence_type_param" desc="公告类型" status="1">
+	</select>
+	<!-- 项目名称类型 -->
+	<select name="product_name_type_param" desc="项目名称类型" status="1">
+	</select>
+	<!-- 可分期项目 -->
+	<select name="item_period_param" desc="可分期项目" status="1">
+	</select>
+	<!-- 消息类型 -->
+	<select name="message_type_param" desc="消息类型" status="1">
+		<option value="0" text="产品公告" status="1" />
+		<option value="1" text="系统公告" status="1" />
+		<option value="2" text="运营公告" status="1" />
+	</select>
+	<!-- 任务类型 -->
+	<select name="task_type_param" desc="任务类型" status="1">
+		<option value="01" text="注册" status="1" />
+		<option value="02" text="邀请" status="1" />
+		<option value="03" text="投资" status="1" />
+		<option value="04" text="每天签到" status="1" />
+		<option value="05" text="查看新闻" status="1" />
+		<option value="06" text="分享新闻" status="1" />
+		<option value="07" text="查看产品" status="1" />
+		<option value="08" text="分享产品" status="1" />
+		<option value="09" text="学习视频" status="1" />
+		<option value="10" text="分享视频" status="1" />
+		<option value="11" text="投资账号" status="1" />
+		<option value="12" text="资产证明" status="1" />
+		<option value="13" text="理财师认证" status="1" />
+	</select>
+	<!-- 任务类型对应的Module -->
+	<select name="task_module_type_param" desc="任务类型对应的Module" status="1">
+		<option value="01" text="registerModule" status="1" />
+		<option value="02" text="inviteModule" status="1" />
+		<option value="03" text="investModule" status="1" />
+		<option value="04" text="signModule" status="1" />
+		<option value="05" text="viewNewsModule" status="1" />
+		<option value="06" text="shareNewsModule" status="1" />
+		<option value="07" text="viewPeriodModule" status="1" />
+		<option value="08" text="sharePeriodModule" status="1" />
+		<option value="09" text="viewVideoModule" status="1" />
+		<option value="10" text="shareVideoModule" status="1" />
+		<option value="11" text="accountCertifyModule" status="1" />
+		<option value="12" text="assetCertifyModule" status="1" />
+		<option value="13" text="fpCertifyModule" status="1" />
+	</select>
+	<!-- 任务完成条件类型 -->
+	<select name="condition_type_param" desc="任务完成条件类型" status="1">
+		<option value="0" text="不限制" status="1" />
+		<option value="1" text="次数限制" status="1" />
+		<option value="2" text="天数限制" status="1" />
+	</select>
+	<!-- 任务完成提示状态 -->
+	<select name="task_result_status_param" desc="任务完成提示状态" status="1">
+		<option value="00" text="成功提示" status="1" />
+		<option value="01" text="已获得无需提示" status="1" />
+		<option value="02" text="异常情况无需提示" status="1" />
+		<option value="03" text="投资无需提示" status="1" />
+		<option value="04" text="注册无需提示" status="1" />
+	</select>
+	<!-- 记录类型 -->
+	<select name="record_type_param" desc="记录类型" status="1">
+		<option value="01" text="完成任务" status="1" />
+		<option value="02" text="兑换商品" status="1" />
+	</select>
+	<!-- 任务挣得类型 -->
+	<select name="earn_type_param" desc="任务挣得" status="1">
+		<option value="1" text="+" status="1" />
+		<option value="2" text="-" status="1" />
+	</select>
+	<!-- 积分使用状态 -->
+	<select name="score_use_status_param" desc="积分使用状态" status="1">
+		<option value="0" text="未使用" status="1" />
+		<option value="1" text="已兑换未完" status="1" />
+		<option value="2" text="已兑换完" status="1" />
+		<option value="3" text="已过期" status="1" />
+	</select>
+	<!-- 资源类型 -->
+	<select name="resource_type_param" desc="资源类型" status="1">
+		<option value="01" text="学习视频" status="1" />
+		<option value="02" text="公司资料" status="1" />
+		<option value="03" text="产品资料" status="1" />
+		<option value="04" text="资讯公告" status="1" />
+	</select>
+	<!-- 资源动作类型 -->
+	<select name="resource_action_type_param" desc="资源动作类型" status="1">
+		<option value="01" text="收藏" status="1" />
+		<option value="02" text="点赞" status="1" />
+	</select>
+	<!-- 用户等级类型 -->
+	<select name="user_level_type_param" desc="用户等级类型" status="1">
+		<option value="1" text="普通卡" status="1" />
+		<option value="2" text="贵宾卡" status="1" />
+		<option value="3" text="银尊卡" status="1" />
+		<option value="4" text="金尊卡" status="1" />
+		<option value="5" text="至尊卡" status="1" />
+	</select>
+	<!-- 期限单位 -->
+	<select name="term_unit_param" desc="期限单位" status="1">
+		<option value="1" text="天" status="1" />
+		<option value="2" text="周" status="1" />
+		<option value="3" text="月" status="1" />
+		<option value="4" text="年" status="1" />
+	</select>
+	<!-- 视频类别类型 -->
+	<select name="video_category_type_param" desc="视频类别类型" status="1">
+		<option value="01" text="产品培训" status="1" />
+		<option value="02" text="宏观大势" status="1" />
+		<option value="03" text="经验分享" status="1" />
+		<option value="04" text="专业普及" status="1" />
+	</select>
+	<!-- 投资状态 -->
+	<select name="invest_status_param" desc="投资状态" status="1">
+		<option value="1" text="已投资" status="1" />
+		<option value="0" text="未投资" status="1" />
+	</select>
+	<!-- 发布类型 -->
+	<select name="issue_type_param" desc="发布类型" status="1">
+		<option value="0" text="未发布" status="1" />
+		<option value="1" text="已发布" status="1" />
+	</select>
+	<!-- 服务码生成类型 -->
+	<select name="build_type_param" desc="服务码生成类型" status="1">
+		<option value="0" text="自动" status="1" />
+		<option value="1" text="手动" status="1" />
+	</select>
+	<!-- 角色类型 -->
+	<select name="role_type_param" desc="角色类型" status="1">
+		<option value="0" text="管理员" status="1" />
+		<option value="1" text="理财师" status="1" />
+	</select>
+	<!-- 商品类型 -->
+	<select name="comm_type_param" desc="商品类型" status="1">
+		<option value="0" text="实物" status="1" />
+		<option value="1" text="虚拟物品" status="1" />
+	</select>
+	<!-- 商品类别 -->
+	<select name="comm_club_param" desc="商品类别" status="1">
+	</select>
+	<!-- 订单状态-->
+	<select name="order_state_param" desc="订单状态" status="1">
+		<option value="0" text="待发货" status="1" />
+		<option value="1" text="已发货" status="1" />
+		<option value="2" text="已失效" status="1" />
+	</select>
+	<!-- 营销渠道类型-->
+	<select name="trench_type_param" desc="营销渠道类型" status="1">
+		<option value="01" text="邮件" status="1" />
+		<option value="02" text="短信" status="1" />
+	</select>
+	<!-- 付息方式类型-->
+	<select name="pay_method_type_param" desc="付息方式类型" status="1">
+		<option value="01" text="到期兑付" status="1" />
+		<option value="02" text="项目年度付息" status="1" />
+		<option value="03" text="自然年度付息" status="1" />
+		<option value="04" text="其它" status="1" />
+	</select>
+</para>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<para>
+	<select name="head_fp_2x" desc="理财师默认头像" status="1">
+		/ueditor/ueditor/jsp/upload/image/heads/smy_default_img/head_fp_2x.png
+	</select>
+	<select name="head_fp_3x" desc="理财师默认头像" status="1">
+		/ueditor/ueditor/jsp/upload/image/heads/smy_default_img/head_fp_3x.png
+	</select>
+	<select name="head_lp_2x" desc="投资人默认头像" status="1">
+		/ueditor/ueditor/jsp/upload/image/heads/smy_default_img/head_lp_2x.png
+	</select>
+	<select name="head_lp_3x" desc="投资人默认头像" status="1">
+		/ueditor/ueditor/jsp/upload/image/heads/smy_default_img/head_lp_3x.png
+	</select>
+	<select name="head_cs_2x" desc="客服默认头像" status="1">
+		/ueditor/ueditor/jsp/upload/image/heads/smy_default_img/head_cs_2x.png
+	</select>
+	<select name="head_cs_3x" desc="客服默认头像" status="1">
+		/ueditor/ueditor/jsp/upload/image/heads/smy_default_img/head_cs_3x.png
+	</select>
+	<select name="head_mini_sec_2x" desc="小秘书默认头像" status="1">
+		/ueditor/ueditor/jsp/upload/image/heads/smy_default_img/head_mini_sec_2x.png
+	</select>
+	<select name="head_mini_sec_3x" desc="小秘书默认头像" status="1">
+		/ueditor/ueditor/jsp/upload/image/heads/smy_default_img/head_mini_sec_3x.png
+	</select>
+</para>

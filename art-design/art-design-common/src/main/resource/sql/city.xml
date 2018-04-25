@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<para>
+	<!-- status,1:省, 2:市 -->
+	<select name="110000" desc="北京市" status="1">
+		<option name="110100" desc="北京市" status="2" />
+	</select>
+	<select name="120000" desc="天津市" status="1">
+		<option name="120100" desc="天津市" status="2" />
+	</select>
+	<select name="130000" desc="河北省" status="1">
+		<option name="130100" desc="石家庄市" status="2" />
+		<option name="130200" desc="唐山市" status="2" />
+		<option name="130300" desc="秦皇岛市" status="2" />
+		<option name="130400" desc="邯郸市" status="2" />
+		<option name="130500" desc="邢台市" status="2" />
+		<option name="130600" desc="保定市" status="2" />
+		<option name="130700" desc="张家口市" status="2" />
+		<option name="130800" desc="承德市" status="2" />
+		<option name="130900" desc="沧州市" status="2" />
+		<option name="131000" desc="廊坊市" status="2" />
+		<option name="131100" desc="衡水市" status="2" />
+	</select>
+	<select name="140000" desc="山西省" status="1">
+		<option name="140100" desc="太原市" status="2" />
+		<option name="140200" desc="大同市" status="2" />
+		<option name="140300" desc="阳泉市" status="2" />
+		<option name="140400" desc="长治市" status="2" />
+		<option name="140500" desc="晋城市" status="2" />
+		<option name="140600" desc="朔州市" status="2" />
+		<option name="140700" desc="晋中市" status="2" />
+		<option name="140800" desc="运城市" status="2" />
+		<option name="140900" desc="忻州市" status="2" />
+		<option name="141000" desc="临汾市" status="2" />
+		<option name="141100" desc="吕梁市" status="2" />
+	</select>
+	<select name="150000" desc="内蒙古自治区" status="1">
+		<option name="150100" desc="呼和浩特市" status="2" />
+		<option name="150200" desc="包头市" status="2" />
+		<option name="150300" desc="乌海市" status="2" />
+		<option name="150400" desc="赤峰市" status="2" />
+		<option name="150500" desc="通辽市" status="2" />
+		<option name="150600" desc="鄂尔多斯市" status="2" />
+		<option name="150700" desc="呼伦贝尔市" status="2" />
+		<option name="150800" desc="巴彦淖尔市" status="2" />
+		<option name="150900" desc="乌兰察布市" status="2" />
+		<option name="152200" desc="兴安盟" status="2" />
+		<option name="152500" desc="锡林郭勒盟" status="2" />
+		<option name="152900" desc="阿拉善盟" status="2" />
+	</select>
+	<select name="210000" desc="辽宁省" status="1">
+		<option name="210100" desc="沈阳市" status="2" />
+		<option name="210200" desc="大连市" status="2" />
+		<option name="210300" desc="鞍山市" status="2" />
+		<option name="210400" desc="抚顺市" status="2" />
+		<option name="210500" desc="本溪市" status="2" />
+		<option name="210600" desc="丹东市" status="2" />
+		<option name="210700" desc="锦州市" status="2" />
+		<option name="210800" desc="营口市" status="2" />
+		<option name="210900" desc="阜新市" status="2" />
+		<option name="211000" desc="辽阳市" status="2" />
+		<option name="211100" desc="盘锦市" status="2" />
+		<option name="211200" desc="铁岭市" status="2" />
+		<option name="211300" desc="朝阳市" status="2" />
+		<option name="211400" desc="葫芦岛市" status="2" />
+	</select>
+	<select name="220000" desc="吉林省" status="1">
+		<option name="220100" desc="长春市" status="2" />
+		<option name="220200" desc="吉林市" status="2" />
+		<option name="220300" desc="四平市" status="2" />
+		<option name="220400" desc="辽源市" status="2" />
+		<option name="220500" desc="通化市" status="2" />
+		<option name="220600" desc="白山市" status="2" />
+		<option name="220700" desc="松原市" status="2" />
+		<option name="220800" desc="白城市" status="2" />
+		<option name="222400" desc="延边朝鲜族自治州" status="2" />
+	</select>
+	<select name="230000" desc="黑龙江省" status="1">
+		<option name="230100" desc="哈尔滨市" status="2" />
+		<option name="230200" desc="齐齐哈尔市" status="2" />
+		<option name="230300" desc="鸡西市" status="2" />
+		<option name="230400" desc="鹤岗市" status="2" />
+		<option name="230500" desc="双鸭山市" status="2" />
+		<option name="230600" desc="大庆市" status="2" />
+		<option name="230700" desc="伊春市" status="2" />
+		<option name="230800" desc="佳木斯市" status="2" />
+		<option name="230900" desc="七台河市" status="2" />
+		<option name="231000" desc="牡丹江市" status="2" />
+		<option name="231100" desc="黑河市" status="2" />
+		<option name="231200" desc="绥化市" status="2" />
+		<option name="232700" desc="大兴安岭地区" status="2" />
+	</select>
+	<select name="310000" desc="上海市" status="1">
+		<option name="310100" desc="上海市" status="2" />
+	</select>
+	<select name="320000" desc="江苏省" status="1">
+		<option name="320100" desc="南京市" status="2" />
+		<option name="320200" desc="无锡市" status="2" />
+		<option name="320300" desc="徐州市" status="2" />
+		<option name="320400" desc="常州市" status="2" />
+		<option name="320500" desc="苏州市" status="2" />
+		<option name="320600" desc="南通市" status="2" />
+		<option name="320700" desc="连云港市" status="2" />
+		<option name="320800" desc="淮安市" status="2" />
+		<option name="320900" desc="盐城市" status="2" />
+		<option name="321000" desc="扬州市" status="2" />
+		<option name="321100" desc="镇江市" status="2" />
+		<option name="321200" desc="泰州市" status="2" />
+		<option name="321300" desc="宿迁市" status="2" />
+	</select>
+	<select name="330000" desc="浙江省" status="1">
+		<option name="330100" desc="杭州市" status="2" />
+		<option name="330200" desc="宁波市" status="2" />
+		<option name="330300" desc="温州市" status="2" />
+		<option name="330400" desc="嘉兴市" status="2" />
+		<option name="330500" desc="湖州市" status="2" />
+		<option name="330600" desc="绍兴市" status="2" />
+		<option name="330700" desc="金华市" status="2" />
+		<option name="330800" desc="衢州市" status="2" />
+		<option name="330900" desc="舟山市" status="2" />
+		<option name="331000" desc="台州市" status="2" />
+		<option name="331100" desc="丽水市" status="2" />
+	</select>
+	<select name="340000" desc="安徽省" status="1">
+		<option name="340100" desc="合肥市" status="2" />
+		<option name="340200" desc="芜湖市" status="2" />
+		<option name="340300" desc="蚌埠市" status="2" />
+		<option name="340400" desc="淮南市" status="2" />
+		<option name="340500" desc="马鞍山市" status="2" />
+		<option name="340600" desc="淮北市" status="2" />
+		<option name="340700" desc="铜陵市" status="2" />
+		<option name="340800" desc="安庆市" status="2" />
+		<option name="341000" desc="黄山市" status="2" />
+		<option name="341100" desc="滁州市" status="2" />
+		<option name="341200" desc="阜阳市" status="2" />
+		<option name="341300" desc="宿州市" status="2" />
+		<option name="341500" desc="六安市" status="2" />
+		<option name="341600" desc="亳州市" status="2" />
+		<option name="341700" desc="池州市" status="2" />
+		<option name="341800" desc="宣城市" status="2" />
+	</select>
+	<select name="350000" desc="福建省" status="1">
+		<option name="350100" desc="福州市" status="2" />
+		<option name="350200" desc="厦门市" status="2" />
+		<option name="350300" desc="莆田市" status="2" />
+		<option name="350400" desc="三明市" status="2" />
+		<option name="350500" desc="泉州市" status="2" />
+		<option name="350600" desc="漳州市" status="2" />
+		<option name="350700" desc="南平市" status="2" />
+		<option name="350800" desc="龙岩市" status="2" />
+		<option name="350900" desc="宁德市" status="2" />
+	</select>
+	<select name="360000" desc="江西省" status="1">
+		<option name="360100" desc="南昌市" status="2" />
+		<option name="360200" desc="景德镇市" status="2" />
+		<option name="360300" desc="萍乡市" status="2" />
+		<option name="360400" desc="九江市" status="2" />
+		<option name="360500" desc="新余市" status="2" />
+		<option name="360600" desc="鹰潭市" status="2" />
+		<option name="360700" desc="赣州市" status="2" />
+		<option name="360800" desc="吉安市" status="2" />
+		<option name="360900" desc="宜春市" status="2" />
+		<option name="361000" desc="抚州市" status="2" />
+		<option name="361100" desc="上饶市" status="2" />
+	</select>
+	<select name="370000" desc="山东省" status="1">
+		<option name="370100" desc="济南市" status="2" />
+		<option name="370200" desc="青岛市" status="2" />
+		<option name="370300" desc="淄博市" status="2" />
+		<option name="370400" desc="枣庄市" status="2" />
+		<option name="370500" desc="东营市" status="2" />
+		<option name="370600" desc="烟台市" status="2" />
+		<option name="370700" desc="潍坊市" status="2" />
+		<option name="370800" desc="济宁市" status="2" />
+		<option name="370900" desc="泰安市" status="2" />
+		<option name="371000" desc="威海市" status="2" />
+		<option name="371100" desc="日照市" status="2" />
+		<option name="371200" desc="莱芜市" status="2" />
+		<option name="371300" desc="临沂市" status="2" />
+		<option name="371400" desc="德州市" status="2" />
+		<option name="371500" desc="聊城市" status="2" />
+		<option name="371600" desc="滨州市" status="2" />
+		<option name="371700" desc="荷泽市" status="2" />
+	</select>
+	<select name="410000" desc="河南省" status="1">
+		<option name="410100" desc="郑州市" status="2" />
+		<option name="410200" desc="开封市" status="2" />
+		<option name="410300" desc="洛阳市" status="2" />
+		<option name="410400" desc="平顶山市" status="2" />
+		<option name="410500" desc="安阳市" status="2" />
+		<option name="410600" desc="鹤壁市" status="2" />
+		<option name="410700" desc="新乡市" status="2" />
+		<option name="410800" desc="焦作市" status="2" />
+		<option name="410900" desc="濮阳市" status="2" />
+		<option name="411000" desc="许昌市" status="2" />
+		<option name="411100" desc="漯河市" status="2" />
+		<option name="411200" desc="三门峡市" status="2" />
+		<option name="411300" desc="南阳市" status="2" />
+		<option name="411400" desc="商丘市" status="2" />
+		<option name="411500" desc="信阳市" status="2" />
+		<option name="411600" desc="周口市" status="2" />
+		<option name="411700" desc="驻马店市" status="2" />
+	</select>
+	<select name="420000" desc="湖北省" status="1">
+		<option name="420100" desc="武汉市" status="2" />
+		<option name="420200" desc="黄石市" status="2" />
+		<option name="420300" desc="十堰市" status="2" />
+		<option name="420500" desc="宜昌市" status="2" />
+		<option name="420600" desc="襄阳市" status="2" />
+		<option name="420700" desc="鄂州市" status="2" />
+		<option name="420800" desc="荆门市" status="2" />
+		<option name="420900" desc="孝感市" status="2" />
+		<option name="421000" desc="荆州市" status="2" />
+		<option name="421100" desc="黄冈市" status="2" />
+		<option name="421200" desc="咸宁市" status="2" />
+		<option name="421300" desc="随州市" status="2" />
+		<option name="422800" desc="恩施土家族苗族自治州" status="2" />
+	</select>
+	<select name="430000" desc="湖南省 " status="1">
+		<option name="430100" desc="长沙市" status="2" />
+		<option name="430200" desc="株洲市" status="2" />
+		<option name="430300" desc="湘潭市" status="2" />
+		<option name="430400" desc="衡阳市" status="2" />
+		<option name="430500" desc="邵阳市" status="2" />
+		<option name="430600" desc="岳阳市" status="2" />
+		<option name="430700" desc="常德市" status="2" />
+		<option name="430800" desc="张家界市" status="2" />
+		<option name="430900" desc="益阳市" status="2" />
+		<option name="431000" desc="郴州市" status="2" />
+		<option name="431100" desc="永州市" status="2" />
+		<option name="431200" desc="怀化市" status="2" />
+		<option name="431300" desc="娄底市" status="2" />
+		<option name="433100" desc="湘西土家族苗族自治州" status="2" />
+	</select>
+	<select name="440000" desc="广东省 " status="1">
+		<option name="440100" desc="广州市" status="2" />
+		<option name="440200" desc="韶关市" status="2" />
+		<option name="440300" desc="深圳市" status="2" />
+		<option name="440400" desc="珠海市" status="2" />
+		<option name="440500" desc="汕头市" status="2" />
+		<option name="440600" desc="佛山市" status="2" />
+		<option name="440700" desc="江门市" status="2" />
+		<option name="440800" desc="湛江市" status="2" />
+		<option name="440900" desc="茂名市" status="2" />
+		<option name="441200" desc="肇庆市" status="2" />
+		<option name="441300" desc="惠州市" status="2" />
+		<option name="441400" desc="梅州市" status="2" />
+		<option name="441500" desc="汕尾市" status="2" />
+		<option name="441600" desc="河源市" status="2" />
+		<option name="441700" desc="阳江市" status="2" />
+		<option name="441800" desc="清远市" status="2" />
+		<option name="441900" desc="东莞市" status="2" />
+		<option name="442000" desc="中山市" status="2" />
+		<option name="445100" desc="潮州市" status="2" />
+		<option name="445200" desc="揭阳市" status="2" />
+		<option name="445300" desc="云浮市" status="2" />
+	</select>
+	<select name="450000" desc="广西壮族自治区 " status="1">
+		<option name="450100" desc="南宁市" status="2" />
+		<option name="450200" desc="柳州市" status="2" />
+		<option name="450300" desc="桂林市" status="2" />
+		<option name="450400" desc="梧州市" status="2" />
+		<option name="450500" desc="北海市" status="2" />
+		<option name="450600" desc="防城港市" status="2" />
+		<option name="450700" desc="钦州市" status="2" />
+		<option name="450800" desc="贵港市" status="2" />
+		<option name="450900" desc="玉林市" status="2" />
+		<option name="451000" desc="百色市" status="2" />
+		<option name="451100" desc="贺州市" status="2" />
+		<option name="451200" desc="河池市" status="2" />
+		<option name="451300" desc="来宾市" status="2" />
+		<option name="451400" desc="崇左市" status="2" />
+	</select>
+	<select name="460000" desc="海南省 " status="1">
+		<option name="460100" desc="海口市" status="2" />
+		<option name="460200" desc="三亚市" status="2" />
+		<option name="460300" desc="三沙市" status="2" />
+	</select>
+	<select name="500000" desc="重庆市" status="1">
+		<option name="500100" desc="重庆市" status="2" />
+	</select>
+	<select name="510000" desc="四川省 " status="1">
+		<option name="510100" desc="成都市" status="2" />
+		<option name="510300" desc="自贡市" status="2" />
+		<option name="510400" desc="攀枝花市" status="2" />
+		<option name="510500" desc="泸州市" status="2" />
+		<option name="510600" desc="德阳市" status="2" />
+		<option name="510700" desc="绵阳市" status="2" />
+		<option name="510800" desc="广元市" status="2" />
+		<option name="510900" desc="遂宁市" status="2" />
+		<option name="511000" desc="内江市" status="2" />
+		<option name="511100" desc="乐山市" status="2" />
+		<option name="511300" desc="南充市" status="2" />
+		<option name="511400" desc="眉山市" status="2" />
+		<option name="511500" desc="宜宾市" status="2" />
+		<option name="511600" desc="广安市" status="2" />
+		<option name="511700" desc="达州市" status="2" />
+		<option name="511800" desc="雅安市" status="2" />
+		<option name="511900" desc="巴中市" status="2" />
+		<option name="512000" desc="资阳市" status="2" />
+		<option name="513200" desc="阿坝藏族羌族自治州" status="2" />
+		<option name="513300" desc="甘孜藏族自治州" status="2" />
+		<option name="513400" desc="凉山彝族自治州" status="2" />
+	</select>
+	<select name="520000" desc="贵州省 " status="1">
+		<option name="520100" desc="贵阳市" status="2" />
+		<option name="520200" desc="六盘水市" status="2" />
+		<option name="520300" desc="遵义市" status="2" />
+		<option name="520400" desc="安顺市" status="2" />
+		<option name="520500" desc="毕节市" status="2" />
+		<option name="520600" desc="铜仁市" status="2" />
+		<option name="522300" desc="黔西南布依族苗族自治州" status="2" />
+		<option name="522600" desc="黔东南苗族侗族自治州" status="2" />
+		<option name="522700" desc="黔南布依族苗族自治州" status="2" />
+	</select>
+	<select name="530000" desc="云南省 " status="1">
+		<option name="530100" desc="昆明市" status="2" />
+		<option name="530300" desc="曲靖市" status="2" />
+		<option name="530400" desc="玉溪市" status="2" />
+		<option name="530500" desc="保山市" status="2" />
+		<option name="530600" desc="昭通市" status="2" />
+		<option name="530700" desc="丽江市" status="2" />
+		<option name="530800" desc="普洱市" status="2" />
+		<option name="530900" desc="临沧市" status="2" />
+		<option name="532300" desc="楚雄彝族自治州" status="2" />
+		<option name="532500" desc="红河哈尼族彝族自治州" status="2" />
+		<option name="532600" desc="文山壮族苗族自治州" status="2" />
+		<option name="532800" desc="西双版纳傣族自治州" status="2" />
+		<option name="532900" desc="大理白族自治州" status="2" />
+		<option name="533100" desc="德宏傣族景颇族自治州" status="2" />
+		<option name="533300" desc="怒江傈僳族自治州" status="2" />
+		<option name="533400" desc="迪庆藏族自治州" status="2" />
+	</select>
+	<select name="540000" desc="西藏自治区 " status="1">
+		<option name="540100" desc="拉萨市" status="2" />
+		<option name="540200" desc="日喀则市" status="2" />
+		<option name="540300" desc="昌都市" status="2" />
+		<option name="540400" desc="林芝市" status="2" />
+		<option name="542200" desc="山南地区" status="2" />
+		<option name="542400" desc="那曲地区" status="2" />
+		<option name="542500" desc="阿里地区" status="2" />
+	</select>
+	<select name="610000" desc="陕西省 " status="1">
+		<option name="610100" desc="西安市" status="2" />
+		<option name="610200" desc="铜川市" status="2" />
+		<option name="610300" desc="宝鸡市" status="2" />
+		<option name="610400" desc="咸阳市" status="2" />
+		<option name="610500" desc="渭南市" status="2" />
+		<option name="610600" desc="延安市" status="2" />
+		<option name="610700" desc="汉中市" status="2" />
+		<option name="610800" desc="榆林市" status="2" />
+		<option name="610900" desc="安康市" status="2" />
+		<option name="611000" desc="商洛市" status="2" />
+	</select>
+	<select name="620000" desc="甘肃省 " status="1">
+		<option name="620100" desc="兰州市" status="2" />
+		<option name="620200" desc="嘉峪关市" status="2" />
+		<option name="620300" desc="金昌市" status="2" />
+		<option name="620400" desc="白银市" status="2" />
+		<option name="620500" desc="天水市" status="2" />
+		<option name="620600" desc="武威市" status="2" />
+		<option name="620700" desc="张掖市" status="2" />
+		<option name="620800" desc="平凉市" status="2" />
+		<option name="620900" desc="酒泉市" status="2" />
+		<option name="621000" desc="庆阳市" status="2" />
+		<option name="621100" desc="定西市" status="2" />
+		<option name="621200" desc="陇南市" status="2" />
+		<option name="622900" desc="临夏回族自治州" status="2" />
+		<option name="623000" desc="甘南藏族自治州" status="2" />
+	</select>
+	<select name="630000" desc="青海省 " status="1">
+		<option name="630100" desc="西宁市" status="2" />
+		<option name="630200" desc="海东市" status="2" />
+		<option name="632200" desc="海北藏族自治州" status="2" />
+		<option name="632300" desc="黄南藏族自治州" status="2" />
+		<option name="632500" desc="海南藏族自治州" status="2" />
+		<option name="632600" desc="果洛藏族自治州" status="2" />
+		<option name="632700" desc="玉树藏族自治州" status="2" />
+		<option name="632800" desc="海西蒙古族藏族自治州" status="2" />
+	</select>
+	<select name="640000" desc="宁夏回族自治区 " status="1">
+		<option name="640100" desc="银川市" status="2" />
+		<option name="640200" desc="石嘴山市" status="2" />
+		<option name="640300" desc="吴忠市" status="2" />
+		<option name="640400" desc="固原市" status="2" />
+		<option name="640500" desc="中卫市" status="2" />
+	</select>
+	<select name="650000" desc="新疆维吾尔自治区 " status="1">
+		<option name="650100" desc="乌鲁木齐市" status="2" />
+		<option name="650200" desc="克拉玛依市" status="2" />
+		<option name="650400" desc="吐鲁番市" status="2" />
+		<option name="652200" desc="哈密地区" status="2" />
+		<option name="652300" desc="昌吉回族自治州" status="2" />
+		<option name="652700" desc="博尔塔拉蒙古自治州" status="2" />
+		<option name="652800" desc="巴音郭楞蒙古自治州" status="2" />
+		<option name="652900" desc="阿克苏地区" status="2" />
+		<option name="653000" desc="克孜勒苏柯尔克孜自治州" status="2" />
+		<option name="653100" desc="喀什地区" status="2" />
+		<option name="653200" desc="和田地区" status="2" />
+		<option name="654000" desc="伊犁哈萨克自治州" status="2" />
+		<option name="654200" desc="塔城地区" status="2" />
+		<option name="654300" desc="阿勒泰地区" status="2" />
+	</select>
+	<select name="710000" desc="台湾省 " status="1">
+		<option name="710100" desc="台湾省" status="2" />
+	</select>
+	<select name="810000" desc="香港特别行政区 " status="1">
+		<option name="810100" desc="香港特别行政区" status="2" />
+	</select>
+	<select name="820000" desc="澳门特别行政区 " status="1">
+		<option name="820100" desc="澳门特别行政区" status="2" />
+	</select>
+</para>

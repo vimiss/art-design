@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<para>
+	<select name="add_user.ftl" desc="用户注册验证码" status="1">
+		尊敬的用户您好，您的注册验证码是：${smsCode}【请勿泄漏】。
+	</select>
+	<select name="forget_password.ftl" desc="忘记密码验证码" status="1">
+		尊敬的用户您好，您的验证码是：${smsCode}【请勿泄漏】。
+	</select>
+	<select name="dimission_user.ftl" desc="离职短信内容" status="1">
+		尊敬的用户您好，我司员工${fpUsername}已离职，其今后为您提供的服务均不代表我司如有疑问，详询400-061-8222。祝您投资愉快！
+	</select>
+	<select name="apply_ing.ftl" desc="预约投资额度" status="1">
+		产品${perName}预约申请成功，本预约并非认购凭证，请您最终以产品认/申购确认函为准！
+	</select>
+	<select name="apply_remind.ftl" desc="投顾收到预约" status="1">
+		您的客户${applyUsername}预约了产品${perName}，请及时电话联系进行确认，客户电话：${accoUsername}。
+	</select>
+	<select name="apply_confirm.ftl" desc="确认预约投资额度" status="1">
+		产品${perName}已确认，请您密切关注产品动态，如有问题，请联系您的专属投资顾问！
+	</select>
+	<select name="apply_effective.ftl" desc="投资生效" status="1">
+		产品${perName}已生效，请您耐心等候，产品到期后会进行收益分配！
+	</select>
+	<select name="apply_expired.ftl" desc="投资失效" status="1">
+		产品${perName}已失效，您可以预约其他产品，有问题可以咨询投资顾问！
+	</select>
+	<select name="apply_redeemable.ftl" desc="投资赎回" status="1">
+		产品${perName}可赎回，您购买的产品已到期，可以赎回属于您的收益啦！
+	</select>
+	<select name="apply_complete.ftl" desc="投资结束" status="1">
+		产品${perName}已结束，本次产品交易已结束，您可以继续购买其他产品!
+	</select>
+	<select name="secretary_msg.ftl" desc="小秘书消息" status="1">
+		您昨天收入${income}积分，支出${cost}积分。
+	</select>
+	<select name="new_product.ftl" desc="新产品上线公告" status="1">
+		新产品${itemName}&#40;${perName}&#41;已经上线了！业绩基准:${perDriftString}。 产品规模:${perPlanQuota}。
+	</select>
+	<select name="fp_certify_notice.ftl" desc="理财师认证通知" status="1">
+		尊敬的用户您好，您在我平台提交的认证资料已通过审核，恭贺您成为合众大家庭的一员。
+	</select>
+	<select name="asset_notice.ftl" desc="资产证明通知" status="1">
+		尊敬的用户您好，您在我平台提交的资产证明已通过审核，开始理财吧。
+	</select>
+	<select name="apply_input.ftl" desc="申请录入状态" status="1">
+		产品${perName}预约申请录入成功，请等待投资顾问确认。
+	</select>
+	<select name="email_title.ftl" desc="邮件标题" status="1">
+		${itemName}
+	</select>
+	<select name="email_content.ftl" desc="邮件内容" status="1">
+		您好！附件是合众云精选产品《${itemName}》相关资料。感谢您使用合众云，我们将持续为您提供最优质的金融产品。欢迎致电官方客服电话400-061-8222。
+	</select>
+</para>
